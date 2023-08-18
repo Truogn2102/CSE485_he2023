@@ -29,7 +29,7 @@
         @endif
         <div class="d-flex my-3" style="justify-content: space-between">
             <h1 class="text-center">Channel</h1>
-            <a href="{{route('channel.create')}}" class="btn btn-success d-flex align-items-center">Add New Chanel</a>
+            <a href="{{route('channel.create')}}" class="btn btn-success d-flex align-items-center">+ Add New Chanel</a>
         </div>
         <table class="table table-striped mt-1">
             <thead>
@@ -40,6 +40,7 @@
                 <th>Channel Name</th>
                 <th>Description</th>
                 <th>Subscribers Count</th>
+                <th>URL</th>
                 <th colspan="1" class="text-center">Action</th>
             </tr>
             </thead>
@@ -51,6 +52,7 @@
                     <td>{{$channel->ChannelName}}</td>
                     <td>{{$channel->Description}}</td>
                     <td>{{$channel->SubscribersCount}}</td>
+                    <td>{{$channel->URL}}</td>
                     <td class="d-flex gap-3 justify-content-center">
                         <a href="{{route('channel.edit',$channel->ChannelID)}}" class="btn btn-warning">Edit</a>
                         <form action="{{route('channel.delete',$channel->ChannelID)}}" method="post">
